@@ -2,6 +2,9 @@ const cluster = require('cluster');
 const http = require('http');
 const numCPUs = require('os').cpus().length;
 
+console.log(cluster.isMaster);
+
+//
 if(cluster.isMaster){
 	for(var i = 0; i < numCPUs; i++){
 		cluster.fork();
